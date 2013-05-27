@@ -3,7 +3,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.fressian</groupId>
+  <groupId>userevents</groupId>
   <artifactId>fressian</artifactId>
   <version>0.6.4-SNAPSHOT</version>
   <name>${project.artifactId}</name>
@@ -22,6 +22,11 @@
       <email>richhickey@gmail.com</email>
       <timezone>-5</timezone>
     </developer>
+    <developer>
+      <name>Trevor Bernard</name>
+      <email>trevor@userevents.com</email>
+      <timezone>-4</timezone>
+    </developer>
   </developers>
 
   <organization>
@@ -38,9 +43,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:Datomic/fressian.git</connection>
-    <developerConnection>scm:git:git@github.com:Datomic/fressian.git</developerConnection>
-    <url>git@github.com:Datomic/fressian.git</url>
+    <connection>scm:git:git@github.com:trevorbernard/fressian.git</connection>
+    <developerConnection>scm:git:git@github.com:trevorbernard/fressian.git</developerConnection>
+    <url>git@github.com:trevorbernard/fressian.git</url>
   </scm>
 
   <properties> 
@@ -61,12 +66,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-    <parent>
-      <groupId>org.sonatype.oss</groupId>
-      <artifactId>oss-parent</artifactId>
-      <version>7</version>
-    </parent>
 
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
@@ -106,14 +105,18 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.4</version>
-        <configuration>
-          <keyname>Datomic</keyname>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>releases</id>
+      <name>Internal Releases</name>
+      <url>https://repo.userevents.com/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id>
+      <name>Internal Snapshots</name>
+      <url>https://repo.userevents.com/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
