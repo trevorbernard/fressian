@@ -23,7 +23,6 @@ public class FixedBytesOutputStream extends OutputStream {
 
     public void setBuffer(byte[] buf) {
         this.buf = buf;
-        this.count = 0;
     }
 
     public byte[] internalBuffer() {
